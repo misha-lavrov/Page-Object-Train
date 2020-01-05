@@ -1,5 +1,6 @@
 import pytest
 from pages.product_page import ProductPage
+from pages.basket_page import BasketPage
 from pages.login_page import LoginPage
 from pages.locators import ProductPageLocators
 import time
@@ -45,7 +46,7 @@ def test_guest_can_add_product_to_basket(browser):
 
 @pytest.mark.need_review
 def test_guest_cant_see_product_in_basket_opened_from_product_page(browser):
-    page = ProductPage(browser, PRODUCT_LINK)
+    page = BasketPage(browser, PRODUCT_LINK)
     page.open()
     page.should_be_basket_link()
     page.go_to_basket()

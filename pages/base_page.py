@@ -6,7 +6,6 @@ from selenium.webdriver.support import expected_conditions as EC
 import math
 
 from .locators import BasePageLocators
-from .locators import BasketPageLocators
 # from .login_page import LoginPage
 
 
@@ -73,9 +72,3 @@ class BasePage():
     def go_to_basket(self):
         basket_link = self.browser.find_element(*BasePageLocators.BASKET_LINK)
         basket_link.click()
-
-    def basket_should_be_empty(self):
-        assert self.is_element_present(*BasketPageLocators.CONTINUE_SHOPPING_LINK), "The basket is not empty."
-
-    def basket_should_not_goods(self):
-        self.is_not_element_present(*BasketPageLocators.BASKET_SUMMARY_FORM), "There are goods in the basket."
