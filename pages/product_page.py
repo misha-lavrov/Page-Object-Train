@@ -6,7 +6,6 @@ class ProductPage(BasePage):
     def add_product_to_basket(self):
         self.should_be_add_button()
         self.click_on_add_button()
-        self.solve_quiz_and_get_code()
         self.should_be_success_added_div()
         self.should_be_basket_info_div()
         self.good_name_equals_added_to_basket_good_name()
